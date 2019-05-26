@@ -5,6 +5,11 @@ public class Tracks {
     String title;
     String singer;
 
+    public Tracks(String title, String singer) {
+        this.title = title;
+        this.singer = singer;
+    }
+
     public Tracks(){
 
     }

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
-        recycler = new Recycler();
+        recycler = new Recycler(MainActivity.this);
         recyclerView.setAdapter(recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Tracks>> call, Throwable t) {
+
                 Toast.makeText(getApplicationContext(), "Fallo con la petición de información", Toast.LENGTH_SHORT);
             }
         });
